@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+# large re-downloadable source data (keep the repo lean)
+data/*.jsonl.gz
+# scratch logs
+outputs/*.log

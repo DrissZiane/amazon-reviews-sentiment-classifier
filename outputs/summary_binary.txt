@@ -1,0 +1,32 @@
+Mode=binary sample=first -> outputs/classify_binary_first100.json
+  classified 25/100  (10.5s)
+  classified 50/100  (17.7s)
+  classified 75/100  (29.8s)
+  classified 100/100  (70.7s)
+
+========== SUMMARY (mode=binary, n=100) ==========
+Overall accuracy (model agrees with rating-based label): 0.960  (96/100)
+  of which 2 row(s) had an invalid/empty model output (counted as wrong):
+
+Truth (rating-derived) class distribution:
+  POSITIVE: 93
+  NEGATIVE: 7
+
+Confusion matrix (rows=truth from rating, cols=prediction):
+          POSITIVE  NEGATIVE  __ERROR_
+POSITIVE         91         1         1
+NEGATIVE          1         5         1
+
+Per-class recall (true->predicted correctly):
+  POSITIVE: 91/93 = 0.978
+  NEGATIVE: 5/7 = 0.714
+
+Per-class precision (predicted->is actually that):
+  POSITIVE: 91/92 = 0.989
+  NEGATIVE: 5/6 = 0.833
+
+Mismatches (4):
+  ★5  pred=NEGATIVE truth=POSITIVE | 'No note attached to sent gift card' 'What a pretty gift card presentation , the recipient loved it ! I have'
+  ★5  pred=<none/invalid> truth=POSITIVE | 'So cool you can get a free tin with the gift ...' 'So cool you can get a free tin with the gift card and it comes in 24 h'
+  ★1  pred=<none/invalid> truth=NEGATIVE | "A problem to use at drive thru's" 'I only used the $50 card one time at Burger King. It was difficult to '
+  ★3  pred=POSITIVE truth=NEGATIVE | 'Easy to use' 'Very easy to use. I wish I knew about it earlier'
